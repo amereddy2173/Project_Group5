@@ -35,6 +35,23 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        public IActionResult Aarthi()
+        {
+            return View();
+        }
+        public IActionResult sandeep()
+        {
+            return View();
+        }
+        public IActionResult Mounika()
+        {
+            return View();
+        }
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

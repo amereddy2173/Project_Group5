@@ -1,9 +1,48 @@
 ﻿
+@model WebApplication1.Models.ContactUs
 @{
-    ViewData["Title"] = "ContactUs";
+    ViewData["Title"] = "Contact Us";
 }
 
-<h1>ContactUs</h1>
+<h1>@ViewData["Title"]</h1>
+<fieldset>
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.LabelFor(model => model.Subject)
+            @Html.EditorFor(model => model.Subject)
 
-<p> Please contact at (123)123-1234 </p>
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+
+        </p>
+
+        <p>
+            @Html.LabelFor(model => model.Phonenumber)
+            @Html.EditorFor(model => model.Phonenumber)
+
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Message)
+            @Html.TextAreaFor(model => model.Message)
+
+        </p>
+        <button type="submit">Create new contact</button>
+    }
+
+
+</fieldset>
+@if (Model != null)
+{
+    <hr />
+    <h1>Article to be submitted...</h1>
+
+    <h2>@Model.Subject</h2>
+
+    <h4>Posted by: @Model.Name at @Model.DateCreated</h4>
+
+    <p>@Model.Message</p>
+}
 
